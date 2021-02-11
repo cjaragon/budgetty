@@ -80,7 +80,7 @@ Now, open your console. You should not see any errors in your app at this point.
 <details>
 <summary> <code> budgetReducer.js </code> </summary>
 
-```
+```js
 // CREATE AN INITIAL STATE OBJECT THAT WILL BE PASSED THROUGH THE REDUCER TO SET AN INITIAL STATE FOR THE STORE
 const initialState = {
   purchases: [],
@@ -93,13 +93,13 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   return state;
 }
-```
+```js
 </details>
 
 <details>
 <summary> <code> store.js </code> </summary>
 
-```
+```js
 // IMPORT THE REDUX FUNCTIONS, MIDDLEWARE, AND REDUCERS THAT WILL BE USED TO CREATE A STORE
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
@@ -120,7 +120,7 @@ export default createStore(rootReducer, applyMiddleware(promiseMiddleware));
 <details>
 <summary> <code>index.js </code> </summary>
 
-```
+```js
 // IMPORT THE PROVIDER COMPONENT FROM REACT-REDUX AND THE STORE
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -168,7 +168,7 @@ Next, in order to enable the loading animation:
 <details>
 <summary> <code>Budget.js </code> </summary>
 
-```
+```js
 import React, { Component } from 'react';
 import Background from './../shared/Background/Background'
 import Chart1 from './../shared/Chart1';
@@ -250,7 +250,7 @@ In store.js:
 <details>
 <summary> <code>userReducer.js </code> </summary>
 
-```
+```js
 // CREATE AN INITIAL STATE OBJECT THAT WILL EVENTUALLY BE USED TO SET AN INITIAL STATE PROPERTY ON THE REDUX STORE AFTER BEING PASSED THROUGH THE REDUCER
 const initialState = {
   email: null,
@@ -263,12 +263,12 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   return state;
 }
-```
+```js
 </details>
 <details>
 <summary> <code>store.js </code> </summary>
 
-```
+```js
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
 import budgetReducer from './budgetReducer';
@@ -303,7 +303,7 @@ In userReducer.js:
   * URL: '/auth/user-data'
 * The action creator should return an "action" object that has `type` and `payload` properties. The payload should be the `data` variable you you assigned above that is storing the response data from the axios request. 
   * Make sure you're returning `res.data` from the callback passed to the `.then()` of your axios request as shown below.
-    ```
+    ```JS
     export const requestUserData = () => {
     let data = axios.get('/auth/user-data').then(res => res.data)
       return {
@@ -322,7 +322,7 @@ __NOTE__: You should try using the "Network" tab in the chrome developer tools t
 <details>
 <summary>Response object from HTTP request</summary>
 
-```
+```JS
 Response Object:
 
 {
@@ -344,7 +344,7 @@ In Budget.js:
 
 * In `mapStateToProps`, make sure you are getting the user data from the redux store onto the props object
   
-  ```
+  ```JS
   function mapStateToProps(state) {
     return {
       budget: state.budget,
@@ -366,7 +366,7 @@ After completing this step, you should see the logged in user's name next to the
 <details>
 <summary><code> userReducer.js </code> </summary>
 
-```
+```js
 import axios from 'axios';
 
 const initialState = {
@@ -410,7 +410,7 @@ export default function reducer(state = initialState, action) {
 <details>
 <summary><code>Budget.js</code></summary>
 
-```
+```js
 import React, { Component } from 'react';
 import Background from './../shared/Background/Background'
 import Chart1 from './../shared/Chart1';
@@ -511,7 +511,8 @@ You should now see some dummy data appearing as well as the charts reacting to t
 <details>
 <summary><code>budgetReducer.js </code> </summary>
 
-```
+```js
+
 import axios from 'axios';
 
 const initialState = {
@@ -549,7 +550,7 @@ export default function budgetReducer(state = initialState, action) {
 </details>
 <details><summary><code>Budget.js </code> </summary>
 
-```
+```js
 import React, { Component } from 'react';
 import Background from './../shared/Background/Background'
 import Chart1 from './../shared/Chart1';
@@ -668,7 +669,7 @@ Go ahead and try adding and removing purchases. You should see the charts react 
 <details>
 <summary> <code>budgetReducer.js </code> </summary>
 
-```
+```js
 
 import axios from 'axios';
 
@@ -734,7 +735,7 @@ export default function budgetReducer(state = initialState, action) {
 <details>
 <summary> <code>Budget.js </code> </summary>
 
-```
+```js
 
 import React, { Component } from 'react';
 import Background from './../shared/Background/Background'
